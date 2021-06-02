@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Components Sample</title>
+  <style>
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+
+<body>
+  <custom-header id="ch1" theme="dark">
+    <span slot="title">Page Title</span>
+    <ul slot="menu" class="menu">
+      <li>aaa</li>
+      <li>bbb</li>
+      <li>ccc</li>
+    </ul>
+  </custom-header>
+  <!-- 
+  <custom-header theme="light">
+    <span slot="title">Page Title</span>
+    <ul slot="menu" class="menu2">
+      <li>ddd</li>
+      <li>eee</li>
+      <li>fff</li>
+    </ul>
+  </custom-header> -->
+
+  <h2 class="title">Content Title</h2>
+  <!-- <button onclick="toggleTheme()">Change Theme</button> -->
+
+  <script>
+    function toggleTheme() {
+      const ch = document.getElementById('ch1')
+      const theme = document.getElementById('ch1').getAttribute('theme')
+      ch.setAttribute('theme', theme === 'light' ? 'dark' : 'light')
+    }
+  </script>
+</body>
+
+</html>
